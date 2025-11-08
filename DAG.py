@@ -1,11 +1,8 @@
 '''
 =================================================
-Milestone 3
 
-Nama  : Ilham Wahdini
-Batch : RMT-043
+This script is to do automation tranform and load data from PostgreSQL to ElasticSearch. Dataset used is data of Global Renewable Energy Usage.
 
-This program is to do automation tranform and load data from PostgreSQL to ElasticSearch. Dataset used is data of Global Renewable Energy Usage.
 =================================================
 '''
 

@@ -14,8 +14,10 @@ The global shift towards sustainable energy sources has prompted governments and
 
 ## Project Output
 - DAG (Directed Acyclic Graph) built with Apache Airflow.
+![DAG](DAG_graph.jpg)
 - Cleaned and validated dataset.
-- Vizualization and analysis (recommendation) from data
+- Vizualization and analysis (recommendation) from data using
+[Kibana](/images)
 
 ## Data
 The dataset used in this project was sourced from Kaggle.com. Dataset contains information on renewable energy adoption and usage by households around the world for year 2020-2024. It provides insights into the growing trend of renewable energy. The dataset format in csv nad has 1000 datas and 12 columns. List of columns:
@@ -37,16 +39,11 @@ This project employs Python and its libararies to connect with PostgreSQL, condu
 
 ## Stacks
 The programming language, tools, and Python libraries utilized in this project, including:
-Pandas – used for data manipulation and analysis.
-Psycopg2 - used to connect with PostgreSQL to fetch the data feom database.
-Airflow - used to create DAG and connect with Apache Airflow platform.
-Elasticsearch - used to tranfer data to ElasticSearch, so can use data with Kibana.
-Great Expectations - used for doing data validation and meet expectation.
+- Pandas – used for data manipulation and analysis.
+- Psycopg2 - used to connect with PostgreSQL to fetch the data feom database.
+- Airflow - used to create DAG and connect with Apache Airflow platform.
+- Elasticsearch - used to tranfer data to ElasticSearch, so can use data analysis with Kibana.
+- Great Expectations - used for doing data validation and meet expectation.
 
 ## Reference
 - [Dataset Source](https://www.kaggle.com/datasets/hajraamir21/global-renewable-energy-usage-2020-2024)
-
----
-
-**Other Reference:**
-- 
