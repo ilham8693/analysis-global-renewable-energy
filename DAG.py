@@ -28,7 +28,7 @@ def fetch_from_postgres():
 
     query = "SELECT * FROM table_m3"
     df = pd.read_sql(query, conn)
-    df.to_csv('/opt/airflow/dags/P2M3_ilham_wahdini_data_raw.csv', index=False) #save as csv file
+    df.to_csv('/opt/airflow/dags/data_raw.csv', index=False) #save as csv file
 
     conn.close() #to close connection
 
@@ -37,7 +37,7 @@ def data_cleaning():
     '''
     This function is to clean the dataset and then save as clean data. There are two step of data cleaning, drop duplicates and handle missing value.
     '''
-    df = pd.read_csv('/opt/airflow/dags/P2M3_ilham_wahdini_data_raw.csv') #load data
+    df = pd.read_csv('/opt/airflow/dags/data_raw.csv') #load data
 
     # 1. Drop duplicates
     df.drop_duplicates(inplace=True) #drop duplicated data, and make every data unique
@@ -52,7 +52,7 @@ def data_cleaning():
             df[col].fillna(0, inplace=True)
 
     # Save cleaned data
-    df.to_csv('/opt/airflow/dags/P2M3_ilham_wahdini_data_clean.csv', index=False) #save clean data as csv file
+    df.to_csv('/opt/airflow/dags/data_clean.csv', index=False) #save clean data as csv file
 
 # Add to ElasticSearch
 def to_elasticsearch():
@@ -60,7 +60,7 @@ def to_elasticsearch():
     This function is to change data to json and add the data to ElasticSearch.
     '''
     es = Elasticsearch("http://elasticsearch:9200")
-    df = pd.read_csv('/opt/airflow/dags/P2M3_ilham_wahdini_data_clean.csv') #load clean data
+    df = pd.read_csv('/opt/airflow/dags/data_clean.csv') #load clean data
 
     for i,r in df.iterrows():
         doc=r.to_json()
